@@ -1,0 +1,31 @@
+class Solution(object):
+    def isValid(self, s):
+        """
+        :type s: str
+        :rtype: bool
+        """
+        if len(s) == 0 or len(s) == 1:
+            return False
+        newlist = []
+        for i in s:
+            if i == '(' or i == '{' or i == '[':
+                newlist.append(i)
+            elif i == ')' or i == '}' or i == ']':
+                if len(newlist) == 0:
+                    return False    
+                temp = newlist.pop()
+                if temp == '(' and i != ')':
+                    return False
+                elif temp == '[' and i != ']':
+                    return False
+                elif temp == '{' and i != '}':
+                    return False
+        if len(newlist) != 0:
+            return False
+
+        return True
+        
+ Test Case:-
+ "()"
+ Result:-
+ True
