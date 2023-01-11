@@ -1,0 +1,36 @@
+class Solution(object):
+    def isAnagram(self, s, t):
+        """
+        :type s: str
+        :type t: str
+        :rtype: bool
+        """
+        #HS = set(s)
+        '''
+        if len(s) != len(t):
+            return False
+            
+        L = list(t)
+        for i in s:
+            if i in L:
+                L.remove(i)
+        
+        if len(L) == 0:
+            return True
+
+        return False
+        '''
+
+        L1 = list(s)
+        L1.sort()
+        L2 = list(t)
+        L2.sort()
+        if len(s) != len(t):
+            return False
+        
+        return L1 == L2
+                 
+ s =
+"anagram"
+t =
+"nagaram"
