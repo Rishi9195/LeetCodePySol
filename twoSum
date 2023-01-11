@@ -14,6 +14,14 @@ class Solution(object):
                 break
         return L
         
+        #Optimized Code
+        D = {}
+        for i in range(0,len(nums)):
+            temp = target - nums[i]
+            if temp in D:
+                return (i,D[temp])
+            D[nums[i]] = i
+        
 nums =
 [2,7,11,15]
 target =
