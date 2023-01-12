@@ -1,0 +1,24 @@
+class Solution(object):
+    def topKFrequent(self, nums, k):
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: List[int]
+        """
+        D = dict()
+        for i in range(0,len(nums)):
+            if not D.get(nums[i]):
+                D[nums[i]] = 0
+            D[nums[i]] += 1
+        arr = sorted(D, key = D.get,reverse = True)
+        return(arr[:k])
+        
+Input
+nums =
+[1,1,1,2,2,3]
+k =
+2
+Output
+[1,2]
+Expected
+[1,2]
